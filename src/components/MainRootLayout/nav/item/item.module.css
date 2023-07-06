@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 10px;
+}
