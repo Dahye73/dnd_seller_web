@@ -1,8 +1,11 @@
+import LoginForm from "../components/LoginPage/loginForm/loginForm";
+
 const LoginPage = () => {
   return (
-    <div>
-      <h1>Login Page.</h1>
-    </div>
+    <section>
+      <LoginForm />
+      <div>image here.</div>
+    </section>
   );
 };
 
