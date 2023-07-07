@@ -1,13 +1,29 @@
 import styles from "./loginForm.module.scss";
 import google from "../../../../public/images/google.png";
 import kakao from "../../../../public/images/kakao-talk.png";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
+  const onSubmitHandler = (e) => {
+    // 로그인 로직 구현해야함.
+    e.preventDefault();
+    navigate("/main");
+  };
+
   return (
-    <form className={styles.form}>
+    <form
+      onSubmit={onSubmitHandler}
+      className={styles.form}
+    >
       <label>Login</label>
-      <input placeholder="id"></input>
       <input
+        type="text"
+        placeholder="id"
+      ></input>
+      <input
+        type="password"
         placeholder="password"
         className={styles["input-no-margin"]}
       ></input>
