@@ -1,9 +1,11 @@
+import Date_Title_go from "../components/Statics/Statics_Date/Date_Title";
 const StaticsPage = () => {
   return (
     <div>
-      <h1>Statics Page.</h1>
+    <Date_Title_go />
     </div>
   );
 };
 
 export default StaticsPage;
+  

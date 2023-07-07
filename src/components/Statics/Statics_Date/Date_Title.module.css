@@ -1,0 +1,47 @@
+.today {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  margin-left: 20vw;
+  font-size: 1.5em; 
+  font-weight: bold;
+}
+
+.box {
+  width: 300px;
+  min-height: 50px;
+  border: 1px solid black;
+  margin-left: 20vw;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content:center;
+  align-items: left;
+  border-radius: 30%;
+  gap: 10px;
+  margin-left: 0;
+}
+
+.title {
+  text-align: left;
+  font-size: 1.5em;
+}
+
+.number {
+  text-align: left;
+  font-size: 3.0em;
+  color: black;
+}
+
+.icon {
+  margin-left: 20px;  /* 왼쪽 여백을 20px로 설정 */
+}
+
+.heading {
+  display: inline-block;  /* 이를 통해 h1, h2 요소가 문단 전체를 잡아먹는 것을 방지 */
+}
+.boxContainer {
+  display: flex;  /* Flexbox 사용 */
+  gap: -20px;     /* 박스 사이의 간격 */
+}
