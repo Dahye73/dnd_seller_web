@@ -4,7 +4,7 @@ import styles from "./logout.button.module.css";
 const LogoutButton = () => {
   return (
     <button className={styles.btn}>
-      <Logout fontSize="large" />
+      <Logout fontSize="medium" />
       <p>Logout</p>
     </button>
   );
