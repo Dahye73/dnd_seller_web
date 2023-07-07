@@ -1,8 +1,8 @@
+import Order from"../components/Order/order";
+
 const OrderPage = () => {
   return (
-    <div>
-      <h1>Order Page.</h1>
-    </div>
+    <Order/>
   );
 };
 
