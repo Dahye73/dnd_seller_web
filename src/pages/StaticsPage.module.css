@@ -3,3 +3,8 @@
     width: 100%;
     overflow: scroll;
 }
+
+.container-row {
+    display: flex;
+    flex-direction: rows;
+}
