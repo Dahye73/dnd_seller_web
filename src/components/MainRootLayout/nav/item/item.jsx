@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./item.module.css";
 import {
   AccountTree,
@@ -10,12 +10,16 @@ import {
 } from "@mui/icons-material";
 
 const NAV_LIST = [
-  { icon: <Home />, title: "메인화면", url: "" },
-  { icon: <DeliveryDining />, title: "주문정보", url: "/order" },
-  { icon: <AccountTree />, title: "상품관리", url: "/product" },
-  { icon: <Info />, title: "가게정보", url: "/store" },
-  { icon: <SmartToy />, title: "로봇관리", url: "robot" },
-  { icon: <BarChart />, title: "통계", url: "statics" },
+  { icon: <Home fontSize="large" />, title: "메인화면", url: "" },
+  {
+    icon: <DeliveryDining fontSize="large" />,
+    title: "주문정보",
+    url: "order",
+  },
+  { icon: <AccountTree fontSize="large" />, title: "상품관리", url: "product" },
+  { icon: <Info fontSize="large" />, title: "가게정보", url: "store" },
+  { icon: <SmartToy fontSize="large" />, title: "로봇관리", url: "robot" },
+  { icon: <BarChart fontSize="large" />, title: "통계", url: "statics" },
 ];
 
 const Item = () => {
@@ -27,13 +31,18 @@ const Item = () => {
             className={styles.list}
             key={index}
           >
-            <Link
-              className={styles.link}
-              to={``}
+            <NavLink
+              end
+              className={({ isActive }) => {
+                return isActive
+                  ? `${styles.link} ${styles.active}`
+                  : `${styles.link}`;
+              }}
+              to={`${item.url}`}
             >
               <div className={styles.icon}> {item.icon}</div>
               <p>{item.title}</p>
-            </Link>
+            </NavLink>
           </li>
         );
       })}

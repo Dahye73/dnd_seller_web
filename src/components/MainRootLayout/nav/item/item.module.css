@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   list-style: none;
+  padding-right: 10px;
 }
 
 .link {
@@ -10,8 +11,20 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 24px;
+  padding-left: 10px;
 }
 
 .icon {
   margin-right: 10px;
+}
+
+.active {
+  color: rgba(240, 122, 36, 1);
+  border: 2px solid rgba(240, 122, 36, 1);
+  border-radius: 20px;
+}
+
+.link>p {
+  margin: 1rem 0;
 }
