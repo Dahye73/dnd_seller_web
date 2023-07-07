@@ -1,0 +1,5 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(221, 203, 175, 0.26);
+}

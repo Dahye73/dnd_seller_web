@@ -1,0 +1,11 @@
+.nav {
+  background-color: white;
+  width: 20vw;
+  height: 100vh;
+}
+
+.button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
