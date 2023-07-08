@@ -1,0 +1,70 @@
+.today { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin-left: 5vw; 
+  font-size: 1.5em; 
+  font-weight: bold; 
+} 
+
+.box {
+  width: 300px;
+  min-height: 50px; 
+  margin-left: 5vw;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;  
+  align-items: flex-start;  
+
+  border: 3px solid lightgray;
+  border-radius: 6rem;
+  gap: 10px;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+
+.title {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 5px; 
+}
+
+.number {
+  text-align: left;
+  font-size: 3.0rem;
+  color: black;
+  margin-left: 2rem;
+  margin-top: 0; 
+  margin-bottom: 2rem; 
+}
+
+.icon {
+  margin-left: 20px;
+}
+
+.heading {
+  display: inline-block;  
+}
+
+.boxContainer {
+  display: flex;  
+}
+
+.datePickerContainer {
+  display: flex; 
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.react-datepicker-wrapper {
+  position: absolute;
+  right: 1rem;
+  top: 50px;
+}
+
+.container {
+  height: fit-content;
+}
