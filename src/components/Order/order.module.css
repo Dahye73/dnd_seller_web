@@ -1,0 +1,19 @@
+.title{
+    padding-left: 40px;
+    padding-top: 10px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.wrap_menu{
+    
+    width: 80vw;
+    padding-left: 20px;
+
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.wrap_menu::-webkit-scrollbar{
+    display: none;
+}

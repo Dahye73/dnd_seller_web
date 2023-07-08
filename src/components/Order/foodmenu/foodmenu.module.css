@@ -1,0 +1,28 @@
+.box{
+    display: inline-block;
+    width: 339px;
+    height: 361px;
+    text-align: left;
+    vertical-align: middle;
+    color: rgb(95, 95, 95);
+
+
+    /* margin-left: 10px; */
+    margin: 17px;
+    border-radius: 30px;
+    background-color: white;
+
+    box-shadow: 5px 5cqi rgba(128, 128, 128, 0.178);
+}
+
+.orderid{
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.orderdate{
+    margin-left: 40px;
+    font-size: 15px;
+}
+

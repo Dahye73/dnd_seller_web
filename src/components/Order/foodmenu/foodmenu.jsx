@@ -1,11 +1,17 @@
-const foodmenubox = () => {
+import PropTypes from 'prop-types';
+import menustyle from "./foodmenu.module.css";
 
+const Foodmenubox = ({ orderid }) => {
     return (
-        <div>
-            <h1>order #1</h1>
-
+        <div className={menustyle.box}>
+            <p className={menustyle.orderid}> {orderid} </p>
+            <p className={menustyle.orderdate}> 2023-07-08 13:24</p>
         </div>
     )
 }
 
-export default foodmenubox;
+Foodmenubox.propTypes = {
+    orderid: PropTypes.string,
+}
+
+export default Foodmenubox;
