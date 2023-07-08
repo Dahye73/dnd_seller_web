@@ -66,3 +66,5 @@ const Menu_go = () => {
         </div>
     );
 }
+
+export default Menu_go;
