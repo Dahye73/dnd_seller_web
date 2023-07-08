@@ -88,12 +88,8 @@
 
 @media screen and (max-width: 768px) {
     .menuContainer {
-<<<<<<< HEAD
-        width: 100%; 
-=======
         width: 100%;
         /* 화면 크기가 작아졌을 때는 부모 요소의 전체 너비를 사용하도록 설정합니다. */
->>>>>>> 3f412c1acadbae838da48cc7a24e86161e746079
         margin-left: 0;
     }
 }
