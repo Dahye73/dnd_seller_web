@@ -29,6 +29,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    /* 박스 사이의 간격 */
+    width: 90%;
+    margin: 3.3rem auto;
+    /* margin-left: 5vw; */
 }
 
 .box {
@@ -83,7 +88,12 @@
 
 @media screen and (max-width: 768px) {
     .menuContainer {
+<<<<<<< HEAD
         width: 100%; 
+=======
+        width: 100%;
+        /* 화면 크기가 작아졌을 때는 부모 요소의 전체 너비를 사용하도록 설정합니다. */
+>>>>>>> 3f412c1acadbae838da48cc7a24e86161e746079
         margin-left: 0;
     }
 }

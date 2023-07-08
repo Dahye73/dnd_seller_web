@@ -29,23 +29,23 @@ const Menu_go = () => {
                         menuContainerRef.current.scrollBy(0, 3);
                     }
                 }
-            }, 50); 
+            }, 50);
         }
 
         return () => {
             clearInterval(scrollInterval);
         }
-    }, [isMouseDown]); 
+    }, [isMouseDown]);
 
     return (
         <div className={styles.container}>
             <div className={styles.titleContainer}>
                 <h2 className={styles.title}>인기 메뉴</h2>
             </div>
-            <div className={styles.menuContainer} 
-                 ref={menuContainerRef}
-                 onMouseDown={() => setIsMouseDown(true)}
-                 onMouseUp={() => setIsMouseDown(false)}>
+            <div className={styles.menuContainer}
+                ref={menuContainerRef}
+                onMouseDown={() => setIsMouseDown(true)}
+                onMouseUp={() => setIsMouseDown(false)}>
                 {menus.map((menu) => (
                     <Box key={menu.id} className={styles.box}>
                         <img className={styles.image} src={menu.image} alt={menu.name} />
@@ -65,6 +65,4 @@ const Menu_go = () => {
             </div>
         </div>
     );
-};
-
-export default Menu_go;
+}

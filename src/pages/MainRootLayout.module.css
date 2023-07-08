@@ -1,14 +1,19 @@
 .main {
   display: flex;
   flex-direction: row;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
   background-color: rgba(221, 203, 175, 0.26);
 }
 
-.container {
+.content {
   width: 80vw;
+  height: 100vh;
   overflow: scroll;
-  padding: 0;
 }
+
+
 
 ::-webkit-scrollbar {
   width: 0px;
