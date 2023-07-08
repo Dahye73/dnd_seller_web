@@ -1,0 +1,35 @@
+.container {
+    width: 50%;
+}
+
+.title {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    margin-top: 2.6vw;
+    margin-left: 5vw;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* 박스 사이의 간격 */
+    width: 90%;
+    margin: 3.3rem auto;
+    /* margin-left: 5vw; */
+}
+
+.box {
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .menuContainer {
+        width: 100%;
+        /* 화면 크기가 작아졌을 때는 부모 요소의 전체 너비를 사용하도록 설정합니다. */
+        margin-left: 0;
+    }
+}

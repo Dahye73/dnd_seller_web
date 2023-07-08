@@ -1,0 +1,56 @@
+.titleContainer {
+    width: 90%; /* 부모 요소의 너비에 대한 비율로 크기를 지정합니다. */
+    margin: 2rem auto; /* 상하 여백은 2rem, 좌우 여백은 자동으로 설정하여 중앙에 배치합니다. */
+    margin-left: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.title {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.selectBox {
+    width: 30%; /* 부모 요소의 너비에 대한 비율로 크기를 지정합니다. */
+    padding: 5px;
+}
+
+.graphContainer {
+    width: 90%; /* 부모 요소의 너비에 대한 비율로 크기를 지정합니다. */
+    height: 500px;
+    margin: 0 auto; /* 상하 여백은 없고, 좌우 여백은 자동으로 설정하여 중앙에 배치합니다. */
+    margin-left: 5vw;
+    border: 1px solid lightgray;
+    border-radius: 2rem;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.box {
+    width: 100%; /* 부모 요소의 너비에 대한 비율로 크기를 지정합니다. */
+    height: 100%;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+}
+
+.graphPlaceholder {
+    color: #666;
+}
+
+/* 미디어 쿼리를 사용하여 화면 크기가 768px 이하일 때의 스타일을 지정합니다. */
+@media screen and (max-width: 768px) {
+    .titleContainer, .graphContainer {
+        width: 100%; /* 화면 크기가 작아졌을 때는 부모 요소의 전체 너비를 사용하도록 설정합니다. */
+        margin-left: 0;
+    }
+}
+
+.container {
+    width: 50%;
+}
