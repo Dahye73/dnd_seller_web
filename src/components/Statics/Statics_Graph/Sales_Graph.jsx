@@ -83,7 +83,7 @@ const orderData = [
 const Sales_Graph_go = () => {
 
  const [startFull, setStartFull] = useState(0);
-  const [endFull, setEndFull] = useState(7);
+  const [endFull, setEndFull] = useState(5);
 
   const [startOrder, setStartOrder] = useState(0);
   const [endOrder, setEndOrder] = useState(5);
