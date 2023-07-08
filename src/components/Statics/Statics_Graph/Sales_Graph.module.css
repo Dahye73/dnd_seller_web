@@ -19,6 +19,7 @@
 
     font-size: 1em; 
     color: #333; 
+    cursor: pointer;
 }
 
 .selectBox::after { 
@@ -49,10 +50,10 @@
 .box {
     width: 100%; 
     height: 100%;
-    background-color: lightgray;
+    background-color: rgba(236, 223, 223, 0.5);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 2rem;
 }
 
@@ -68,6 +69,14 @@
     }
 }
 
+.Arrow{
+    background-color: transparent;
+    border: none;
+    cursor: pointer; 
+    
+    box-sizing: border-box;
+}
+  
 .container {
     width: 50%;
 }

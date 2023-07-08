@@ -18,24 +18,25 @@ const Menu_go = () => {
     const menuContainerRef = useRef();
     const [isMouseDown, setIsMouseDown] = useState(false);
 
-    useEffect(() => {
-        let scrollInterval;
-        if (!isMouseDown) {
-            scrollInterval = setInterval(() => {
-                if (menuContainerRef.current) {
-                    if (menuContainerRef.current.scrollTop + menuContainerRef.current.clientHeight >= menuContainerRef.current.scrollHeight) {
-                        setTimeout(() => menuContainerRef.current.scrollTo(0, 0), 500);
-                    } else {
-                        menuContainerRef.current.scrollBy(0, 3);
-                    }
-                }
-            }, 50);
-        }
+    // 인기 메뉴 자동 스크롤
+    // useEffect(() => {
+    //     let scrollInterval;
+    //     if (!isMouseDown) {
+    //         scrollInterval = setInterval(() => {
+    //             if (menuContainerRef.current) {
+    //                 if (menuContainerRef.current.scrollTop + menuContainerRef.current.clientHeight >= menuContainerRef.current.scrollHeight) {
+    //                     setTimeout(() => menuContainerRef.current.scrollTo(0, 0), 500);
+    //                 } else {
+    //                     menuContainerRef.current.scrollBy(0, 3);
+    //                 }
+    //             }
+    //         }, 50);
+    //     }
 
-        return () => {
-            clearInterval(scrollInterval);
-        }
-    }, [isMouseDown]);
+    //     return () => {
+    //         clearInterval(scrollInterval);
+    //     }
+    // }, [isMouseDown]);
 
     return (
         <div className={styles.container}>
