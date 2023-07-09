@@ -2,8 +2,6 @@ import { SERVER_URL } from "../const/const";
 
 export async function loginFetch(storeId, storePassword) {
   try {
-    console.log(storeId);
-    console.log(storePassword);
     const result = await fetch(`${SERVER_URL}/store/login`, {
       method: "POST",
       headers: {

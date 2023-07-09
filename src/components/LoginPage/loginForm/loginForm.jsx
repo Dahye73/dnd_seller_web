@@ -29,8 +29,6 @@ const LoginForm = () => {
     try {
       const result = await loginFetch(storeId, storePassword);
 
-      console.log(result);
-
       const accessToken = result["access_token"];
 
       setCookie("jwt", accessToken, {
