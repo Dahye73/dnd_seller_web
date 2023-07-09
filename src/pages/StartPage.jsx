@@ -1,5 +1,8 @@
 import Card from "../UI/card";
+import CardAlignStart from "../UI/card_align_start";
+import StartPageDate from "../components/StartPage/StartPage_date/StartPage_date";
 import StartPageLogo from "../components/StartPage/StartPage_logo/StartPage_logo";
+import StartPageMemo from "../components/StartPage/StartPage_memo/StartPage_memo";
 import StartPageStatics from "../components/StartPage/StartPage_statics/StartPage_statics";
 import styles from "./StartPage.module.scss";
 
@@ -32,10 +35,12 @@ const StartPage = () => {
           </Card>
         </div>
         <div className={styles["grid-item"]}>
-          <Card>item3</Card>
+          <StartPageDate />
         </div>
         <div className={styles["grid-item"]}>
-          <Card>item4</Card>
+          <CardAlignStart>
+            <StartPageMemo />
+          </CardAlignStart>
         </div>
       </div>
     </section>
