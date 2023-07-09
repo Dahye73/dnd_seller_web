@@ -5,7 +5,7 @@
     text-align: center;
     margin: 0;
   }
-  button {
+  .addBtn {
     position: relative;
     left: 1rem;
     border: 1px solid black;
@@ -16,7 +16,7 @@
     text-align: center;
   }
 
-  button:hover {
+  .addBtn:hover {
     cursor: pointer;
     color: rgba(0, 33, 255, 1);
   }
@@ -28,6 +28,9 @@
     li {
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
