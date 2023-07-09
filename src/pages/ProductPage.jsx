@@ -4,9 +4,8 @@ import Frame from "../components/ProductPage/frame/frame.layout"
 const ProductPage = () => {
   return (
     <div>
-      <h1>ProductPage</h1>
-      <ShowList />
       <Frame />
+      <ShowList />
     </div>
   );
 };

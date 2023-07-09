@@ -1,14 +1,81 @@
-.productList table {
-    width: 100%;
-    table-layout: fixed;
-    border: 1px solid #444444;
-    border-collapse: collapse;
-    margin: auto;
+.mainFrame {
+  height: 100%;
+  background-color: whitesmoke;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
 }
 
+
+.productList table {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+tr {
+  height: 90%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 th, td {
-    width: calc(100% / 3);
-    border: 1px solid #444444;
-    height: 33.3%;
-    padding: 10px;
+  text-align: left;
+}
+
+img {
+  display: block;
+  margin: 12% auto;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.imageRow {
+  width: 20%;
+}
+
+.infoRow {
+  width: 60%;
+  position: relative;
+}
+
+.infoRow strong {
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  font-size: x-large;
+}
+
+.infoRow p {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  font-size: medium;
+  font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editCell {
+  position: relative;
+}
+
+.editCell p {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  font-size: large;
+  font-weight: bolder ;
+  color: orange;
+}
+
+.editCell strong {
+  position: absolute;
+  top: 45%;
+  left: 2%;
+  font-size: x-large;
 }
