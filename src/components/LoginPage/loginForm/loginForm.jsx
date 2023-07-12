@@ -1,6 +1,6 @@
 import styles from "./loginForm.module.scss";
-import google from "../../../../public/images/google.png";
-import kakao from "../../../../public/images/kakao-talk.png";
+import google from "/images/google.png";
+import kakao from "/images/kakao-talk.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { loginFetch } from "../../../utilities/login.fetch";
@@ -106,6 +106,7 @@ const LoginForm = () => {
           continue with google
         </button>
         <button
+          type="button"
           onClick={() => kakaoLogin()}
           className={styles["button-with-image"]}
         >
