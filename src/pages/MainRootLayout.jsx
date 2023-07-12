@@ -11,7 +11,7 @@ import { setStore } from "../store/storeSlice";
 
 const MainRootLayout = () => {
   const navigate = useNavigate();
-  const { data, error, isLoading } = useStore();
+  const { data, isLoading } = useStore();
   const dispatch = useDispatch();
 
   if (data) {
@@ -23,8 +23,6 @@ const MainRootLayout = () => {
       navigate("/");
     }
   }, [navigate]);
-
-  if (error) return <h1>에러가 발생했습니다. 다시 시도해주세요.</h1>;
 
   if (isLoading) return <CircularProgress />;
 

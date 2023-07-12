@@ -9,6 +9,13 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const kakaoToken = new URL(document.location.toString()).searchParams.get(
+      "code"
+    );
+    if (kakaoToken) {
+      console.log(kakaoToken);
+      // kakao login logic
+    }
     if (getCookie("jwt")) {
       navigate("/main");
     }
