@@ -11,23 +11,49 @@ import styles from "./StartPage.module.scss";
 const StartPage = () => {
   const { data, error, isLoading } = useStore();
 
-  const curDate = new Date();
-
-  const curYear = curDate.getFullYear();
-
-  const curMonth = curDate.getMonth() + 1;
-
-  const curDay = curDate.getDate();
-
-  const monthData = data.years
-    .find((year) => year.year === curYear)
-    .month_list.find((month) => month.month === curMonth);
-
-  const dayData = monthData.day_list?.find((day) => day.date === curDay);
+  console.log(data);
 
   if (error) return <h1>에러가 발생했습니다. 다시 시도해 주세요.</h1>;
 
   if (isLoading) return <CircularProgress />;
+
+  const now = new Date();
+  const thisMonth = now.getMonth() + 1;
+  const thisYear = now.getFullYear();
+  const lastDay = now.getDate() - 1;
+
+  const thisMonthData = data?.years
+    ?.find((item) => item.year === thisYear)
+    ?.month_list.find((item) => item.month === thisMonth);
+
+  const lastMonthData = data?.years
+    ?.find((item) => item.year === thisYear)
+    ?.month_list.find((item) => item.month === thisMonth - 1);
+
+  const lastDayData = data?.years
+    ?.find((item) => item.year === thisYear)
+    ?.month_list.find((item) => item.month === thisMonth)
+    ?.day_list.find((item) => item.date === lastDay);
+
+  let increasePercetage = 0;
+
+  if (!lastMonthData) {
+    increasePercetage = 0;
+  } else {
+    increasePercetage = Math.floor(
+      ((thisMonthData.total - lastMonthData.total) / lastMonthData.total) * 100
+    );
+  }
+
+  let dailyIncreasePercentage = 0;
+
+  if (!lastDayData) {
+    dailyIncreasePercentage = 0;
+  } else {
+    dailyIncreasePercentage = Math.floor(
+      ((data.total - lastDayData.total) / lastDayData.total) * 100
+    );
+  }
 
   return (
     <section className={styles.container}>
@@ -37,10 +63,13 @@ const StartPage = () => {
           <Card>
             <StartPageStatics
               title={"이번달 매출액"}
-              amount={monthData?.amount || 0}
+              amount={thisMonthData.total}
               description={
                 <>
-                  전월 대비 <strong className={"text-strong"}>{0}% </strong>
+                  전월 대비{" "}
+                  <strong className={"text-strong"}>
+                    {increasePercetage}%{" "}
+                  </strong>
                   증가했습니다.
                 </>
               }
@@ -51,11 +80,12 @@ const StartPage = () => {
           <Card>
             <StartPageStatics
               title={"금일 매출액"}
-              amount={dayData?.amount || 0}
+              amount={data.total}
               description={
                 data?.status ? (
                   <>
-                    전일 대비 <string>0%</string>증가했습니다.
+                    전일 대비 <strong>{dailyIncreasePercentage}% </strong>
+                    증가했습니다.
                   </>
                 ) : (
                   <>판매를 시작해 주세요.</>
