@@ -13,10 +13,10 @@ const Menu_go = () => {
         { id: 5, name: '메뉴5', price: 6000, favorite: 353, image: '/images/food1.jpg' },
         { id: 6, name: '메뉴6', price: 6000, favorite: 353, image: '/images/food1.jpg' },
         { id: 7, name: '메뉴7', price: 6000, favorite: 353, image: '/images/food1.jpg' },
+        { id: 8, name: '메뉴7', price: 6000, favorite: 353, image: '/images/food1.jpg' },
     ]);
 
     const menuContainerRef = useRef();
-    const [isMouseDown, setIsMouseDown] = useState(false);
 
     // 인기 메뉴 자동 스크롤
     // useEffect(() => {
@@ -37,6 +37,21 @@ const Menu_go = () => {
     //         clearInterval(scrollInterval);
     //     }
     // }, [isMouseDown]);
+    const handleWheel = (e) => {
+        e.preventDefault();
+        if (menuContainerRef.current) {
+            menuContainerRef.current.scrollLeft += e.deltaY;
+        }
+    }
+
+    useEffect(() => {
+        const container = menuContainerRef.current;
+        container.addEventListener('wheel', handleWheel, { passive: false });
+
+        return () => {
+            container.removeEventListener('wheel', handleWheel);
+        }
+    }, []);
 
     return (
         <div className={styles.container}>
@@ -45,8 +60,8 @@ const Menu_go = () => {
             </div>
             <div className={styles.menuContainer}
                 ref={menuContainerRef}
-                onMouseDown={() => setIsMouseDown(true)}
-                onMouseUp={() => setIsMouseDown(false)}>
+                onWheel={handleWheel}
+ >
                 {menus.map((menu) => (
                     <Box key={menu.id} className={styles.box}>
                         <img className={styles.image} src={menu.image} alt={menu.name} />

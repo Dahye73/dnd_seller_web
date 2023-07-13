@@ -39,7 +39,7 @@
 .graphContainer {
     width: 90%; 
     height: 500px;
-    margin: 0 auto; 
+    margin: auto; 
     margin-left: 5vw;
     border: 1px solid lightgray;
     border-radius: 2rem;
@@ -78,5 +78,5 @@
 }
   
 .container {
-    width: 50%;
+    width: 100%;
 }
