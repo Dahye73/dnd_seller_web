@@ -1,11 +1,12 @@
 import styles from "./loginForm.module.scss";
-import google from "../../../../public/images/google.png";
-import kakao from "../../../../public/images/kakao-talk.png";
+import google from "/images/google.png";
+import kakao from "/images/kakao-talk.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { loginFetch } from "../../../utilities/login.fetch";
 import { setCookie } from "../../../utilities/cookies";
 import { Button, Dialog, DialogTitle } from "@mui/material";
+import { useGoogleLogin } from "@react-oauth/google";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -13,6 +14,19 @@ const LoginForm = () => {
   const [storePassword, setStorePassword] = useState("");
   const [openErrorModal, setOpenErrorModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  const googleLogin = useGoogleLogin({
+    onSuccess: (res) => {
+      console.log(res);
+    },
+  });
+
+  const kakaoLogin = () => {
+    const REST_API_KEY = "000a8ef9a33653f800585bde1c81e179";
+    const REDIRECT_URI = "http://localhost:5173";
+    const kakaoUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    window.location.href = kakaoUrl;
+  };
 
   const storeIdChangeHandler = (e) => {
     setStoreId(e.target.value);
@@ -28,8 +42,6 @@ const LoginForm = () => {
 
     try {
       const result = await loginFetch(storeId, storePassword);
-
-      console.log(result);
 
       const accessToken = result["access_token"];
 
@@ -82,14 +94,22 @@ const LoginForm = () => {
           <p>OR</p>
           <hr />
         </div>
-        <button className={styles["button-with-image"]}>
+        <button
+          type="button"
+          onClick={() => googleLogin()}
+          className={styles["button-with-image"]}
+        >
           <img
             src={google}
             alt="google login"
           />
           continue with google
         </button>
-        <button className={styles["button-with-image"]}>
+        <button
+          type="button"
+          onClick={() => kakaoLogin()}
+          className={styles["button-with-image"]}
+        >
           <img
             src={kakao}
             alt="kakao login"
