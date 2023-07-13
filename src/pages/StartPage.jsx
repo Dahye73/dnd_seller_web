@@ -11,6 +11,20 @@ import styles from "./StartPage.module.scss";
 const StartPage = () => {
   const { data, error, isLoading } = useStore();
 
+  const curDate = new Date();
+
+  const curYear = curDate.getFullYear();
+
+  const curMonth = curDate.getMonth() + 1;
+
+  const curDay = curDate.getDate();
+
+  const monthData = data.years
+    .find((year) => year.year === curYear)
+    .month_list.find((month) => month.month === curMonth);
+
+  const dayData = monthData.day_list?.find((day) => day.date === curDay);
+
   if (error) return <h1>에러가 발생했습니다. 다시 시도해 주세요.</h1>;
 
   if (isLoading) return <CircularProgress />;
@@ -23,10 +37,10 @@ const StartPage = () => {
           <Card>
             <StartPageStatics
               title={"이번달 매출액"}
-              amount={1838900}
+              amount={monthData?.amount || 0}
               description={
                 <>
-                  매월 평균 대비 <strong className={"text-strong"}>21%</strong>
+                  전월 대비 <strong className={"text-strong"}>{0}% </strong>
                   증가했습니다.
                 </>
               }
@@ -37,7 +51,7 @@ const StartPage = () => {
           <Card>
             <StartPageStatics
               title={"금일 매출액"}
-              amount={0}
+              amount={dayData?.amount || 0}
               description={
                 data?.status ? (
                   <>
