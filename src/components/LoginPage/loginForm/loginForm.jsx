@@ -47,7 +47,7 @@ const LoginForm = () => {
 
       setCookie("jwt", accessToken, {
         path: "/",
-        maxAge: 3600,
+        maxAge: 3600000,
         sameSite: "strict",
       });
 

@@ -24,7 +24,17 @@ const MainRootLayout = () => {
     }
   }, [navigate]);
 
-  if (isLoading) return <CircularProgress />;
+  if (isLoading)
+    return (
+      <CircularProgress
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      />
+    );
 
   return (
     <main className={styles.main}>
