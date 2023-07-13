@@ -11,8 +11,6 @@ import styles from "./StartPage.module.scss";
 const StartPage = () => {
   const { data, error, isLoading } = useStore();
 
-  console.log(data);
-
   if (error) return <h1>에러가 발생했습니다. 다시 시도해 주세요.</h1>;
 
   if (isLoading) return <CircularProgress />;
