@@ -1,30 +1,94 @@
 .container {
-    width: 50%;
+    width: 100%;
 }
 
 .title {
     font-size: 1.5em;
     color: #333;
     font-weight: bold;
-    margin-top: 2.6vw;
     margin-left: 5vw;
 }
 
 .menuContainer {
+    gap: 10px; 
+    width: calc(90% - 20px);
+    height: fit-content;
+    overflow-x: scroll;
+    border: 1px solid lightgray;
+    border-radius: 2rem;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 5vw;
     display: flex;
-    flex-direction: column;
+ }
+
+.titleContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
     /* 박스 사이의 간격 */
     width: 90%;
-    margin: 3.3rem auto;
-    /* margin-left: 5vw; */
 }
 
 .box {
-    padding: 20px;
-    background-color: lightgray;
+    width: 30%;
+    padding: 10px;
+    background-color: rgba(236, 223, 223, 0.5);
     border-radius: 2rem;
 }
+
+.image {
+    width: 20vw;
+}
+
+.menu_title{
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.menu_price{
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu_favorite{
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.favoriteContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.titleAndIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Arrow{
+    background-color: transparent;
+    border: none;
+    cursor: pointer; 
+    
+}
+  
 
 @media screen and (max-width: 768px) {
     .menuContainer {
@@ -33,3 +97,4 @@
         margin-left: 0;
     }
 }
+
