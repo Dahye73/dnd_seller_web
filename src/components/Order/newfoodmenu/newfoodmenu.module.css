@@ -1,4 +1,4 @@
-.box{
+.box {
     display: inline-block;
     width: 339px;
     height: 361px;
@@ -15,17 +15,17 @@
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
-.box:hover{
+.box:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 4px rgba(0, 0, 0, 0.2);
 }
-.orderid{
+
+.neworderid {
     margin-top: 40px;
     margin-left: 40px;
     font-size: 20px;
 }
 
-.orderdate{
+.neworderdate {
     margin-left: 40px;
     font-size: 15px;
 }
-

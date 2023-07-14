@@ -17,3 +17,23 @@
 .wrap_menu::-webkit-scrollbar{
     display: none;
 }
+
+.down_btn{
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.up_btn {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.completion_order{
+    display: flex;
+}
+
+.button_container {
+    position: relative;
+    overflow-x: scroll;
+    display: flex;
+}
