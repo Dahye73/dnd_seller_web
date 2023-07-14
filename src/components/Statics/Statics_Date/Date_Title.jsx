@@ -36,6 +36,9 @@ const Date_Title_go = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const minDate = new Date(2023, 0, 1); // 2023년 1월 1일
+  const maxDate = new Date(); // 현재 날짜
+
   return (
     <div className={styles.container}>
       <div className={styles.today}>
@@ -47,15 +50,18 @@ const Date_Title_go = () => {
             className={styles.icon}
             onClick={handleOpen}
           >
-            {isOpen && (
-              <DatePicker
-                selected={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                inline
-              />
-            )}
             <CalendarTodayIcon fontSize="large" />
           </IconButton>
+          {isOpen && (
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              inline
+              shouldCloseOnSelect={false} // 아이콘 노 클릭
+              minDate={minDate}
+              maxDate={maxDate}
+            />
+          )}
         </div>
       </div>
 

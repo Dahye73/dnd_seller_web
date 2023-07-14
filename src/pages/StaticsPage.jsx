@@ -10,8 +10,8 @@ const StaticsPage = () => {
         <Date_Title_go />
       </div>
       <div className={styles["container-row"]}>
-        <Sales_Graph_go />
         <Menu_go />
+        <Sales_Graph_go />
       </div>
     </div>
   );

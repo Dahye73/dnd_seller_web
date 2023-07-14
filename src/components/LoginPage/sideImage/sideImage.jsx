@@ -1,4 +1,4 @@
-import image from "../../../../public/images/login.png";
+import image from "/images/login.png";
 import styles from "./sideImage.module.scss";
 
 const SideImage = () => {
