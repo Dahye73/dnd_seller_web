@@ -1,0 +1,19 @@
+.title{    
+    padding-top: 5px;
+    font-size: 20px;
+    color:rgb(65, 65, 65);
+
+}
+
+.content{
+    font-size: 15px;
+    color:rgba(65, 65, 65, 0.8);
+
+}
+
+.request{
+    width: 90%;
+    margin-left: 50px;
+    border-bottom: 1px solid rgb(137, 137, 136);
+    padding-bottom: 40px;
+}
