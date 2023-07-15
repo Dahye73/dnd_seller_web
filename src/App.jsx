@@ -10,6 +10,7 @@ import ProductPage from "./pages/ProductPage";
 import RobotInfomationPage from "./pages/RobotInfomationPage";
 import StaticsPage from "./pages/StaticsPage";
 import StorePage from "./pages/StorePage";
+import { useState } from "react";
 
 const router = createBrowserRouter([
   { path: "/", element: <LoginPage /> },
