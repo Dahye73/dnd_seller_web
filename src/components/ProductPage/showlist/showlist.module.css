@@ -1,0 +1,86 @@
+.mainFrame {
+  height: 100%;
+  background-color: whitesmoke;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+
+
+.productList table {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+tr {
+  height: 90%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+th, td {
+  text-align: left;
+}
+
+img {
+  display: block;
+  margin: 12% auto;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.imageRow {
+  width: 20%;
+}
+
+.infoRow {
+  width: 60%;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* 수정 */
+}
+
+.infoRow strong {
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  font-size: x-large;
+}
+
+.infoRow p {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  font-size: medium;
+  font-weight: lighter;
+}
+
+.editCell {
+  position: relative;
+}
+
+.editCell p {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  font-size: large;
+  font-weight: bolder ;
+  color: orange;
+}
+
+.editButton {
+  position: absolute;
+  left: 90px;
+}
+
+.editCell strong {
+  position: absolute;
+  top: 45%;
+  left: 2%;
+  font-size: x-large;
+}
