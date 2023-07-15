@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
+import { uploadFetch } from "../../../utilities/uploadproduct.fetch";
 import ProductPage from "../../../pages/ProductPage";
 import EditPopup from "../editpopup/editpopup.layout";
 import styles from "./showlist.module.css";
@@ -10,6 +11,11 @@ const Showlist = () => {
   const [isPlusPopupOpen, setIsPlusPopupOpen] = useState(false);
   const [isEditPopupOpen, setIsEditPopupOpen] = useState(false);
   const [isDeletePopupOpen, setIsDeletePopupOpen] = useState(false);
+  // const [_id, get_id] = useState("")
+  const [image, getImageFile] = useState("")
+  const [name, getName] = useState("")
+  const [price, getPrice] = useState("")
+  const [description, getDescription] = useState("")
 
   const openPlusPopup = () => {
     setIsPlusPopupOpen(true);
