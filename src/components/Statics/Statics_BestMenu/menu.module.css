@@ -1,5 +1,5 @@
 .container {
-    width: 100%;
+    width: 50%;
 }
 
 .title {
@@ -10,17 +10,26 @@
 }
 
 .menuContainer {
-    gap: 10px; 
-    width: calc(90% - 20px);
-    height: fit-content;
-    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* 박스 사이의 간격 */
+    width: 90%;
+    margin: 3.3rem auto;
+    /* margin-left: 5vw; */
+    gap: 10px;
+    /* 박스 사이의 간격 */
+    width: 78%;
+    height: 70vh;
+    /* Add this line */
+    overflow-y: auto;
+    /* Add this line */
     border: 1px solid lightgray;
     border-radius: 2rem;
     padding: 20px;
     box-sizing: border-box;
     margin-left: 5vw;
-    display: flex;
- }
+}
 
 .titleContainer {
     margin-top: 2rem;
@@ -28,38 +37,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    /* 박스 사이의 간격 */
-    width: 90%;
 }
 
 .box {
-    width: 30%;
-    padding: 10px;
-    background-color: rgba(236, 223, 223, 0.5);
+    padding: 20px;
+    background-color: lightgray;
     border-radius: 2rem;
 }
 
 .image {
-    width: 20vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
-.menu_title{
+.menu_title {
     font-size: 1.5em;
     color: #333;
     font-weight: bold;
     margin-left: 6px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
 }
 
-.menu_price{
+.menu_price {
     font-size: 1.5em;
     color: #333;
     font-weight: bold;
 }
 
-.menu_favorite{
+.menu_favorite {
     font-size: 1.5em;
     color: #333;
     font-weight: bold;
@@ -82,14 +88,6 @@
     align-items: center;
 }
 
-.Arrow{
-    background-color: transparent;
-    border: none;
-    cursor: pointer; 
-    
-}
-  
-
 @media screen and (max-width: 768px) {
     .menuContainer {
         width: 100%;
@@ -97,4 +95,3 @@
         margin-left: 0;
     }
 }
-
