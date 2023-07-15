@@ -40,6 +40,9 @@ img {
 .infoRow {
   width: 60%;
   position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* 수정 */
 }
 
 .infoRow strong {
@@ -55,9 +58,6 @@ img {
   left: 1%;
   font-size: medium;
   font-weight: lighter;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .editCell {
@@ -71,6 +71,11 @@ img {
   font-size: large;
   font-weight: bolder ;
   color: orange;
+}
+
+.editButton {
+  position: absolute;
+  left: 90px;
 }
 
 .editCell strong {
