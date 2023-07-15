@@ -21,7 +21,8 @@ tr {
 }
 
 
-th, td {
+th,
+td {
   text-align: left;
 }
 
@@ -42,7 +43,8 @@ img {
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal; /* 수정 */
+  white-space: normal;
+  /* 수정 */
 }
 
 .infoRow strong {
@@ -69,7 +71,7 @@ img {
   top: 5%;
   right: 10%;
   font-size: large;
-  font-weight: bolder ;
+  font-weight: bolder;
   color: orange;
 }
 
