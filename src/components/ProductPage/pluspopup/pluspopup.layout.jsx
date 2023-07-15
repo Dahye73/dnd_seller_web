@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from "./pluspopup.module.css"
+import styles from "./pluspopup.module.css";
+import { uploadProduct } from "../../../utilities/uploadproduct.fetch";
 
 const PlusPopup = ({ onClose }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -7,6 +8,8 @@ const PlusPopup = ({ onClose }) => {
   const [productName, setProductName] = useState('');
   const [productDescription, setProductDescription] = useState('');
   const [price, setPrice] = useState(0);
+ 
+  const formData = new FormData();
 
   const closeModalHandler = () => {
     setIsOpen(false);
@@ -15,7 +18,10 @@ const PlusPopup = ({ onClose }) => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setImage(URL.createObjectURL(file));
+
+    // setImage(URL.createObjectURL(file));
+    formData.append('image', file);
+    
   };
 
   const handleProductNameChange = (e) => {
@@ -31,10 +37,22 @@ const PlusPopup = ({ onClose }) => {
     setPrice(value);
   };
 
-  const handleSubmit = () => {
-    // 등록 로직 작성
-    setIsOpen(false);
-    onClose(); // 등록 후 모달 창을 닫기 위해 onClose 함수를 호출합니다.
+  const handleSubmit = async () => {
+    try {
+      // const formData = new FormData();
+      // formData.append('image', image);
+      formData.append('productName', productName);
+      formData.append('productDescription', productDescription);
+      formData.append('price', price);
+
+      const response = await uploadProduct(formData);
+      console.log(response); // 서버 응답 확인
+
+      setIsOpen(false);
+      onClose();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -48,7 +66,7 @@ const PlusPopup = ({ onClose }) => {
                 <div>
                   <img src={image} alt="Uploaded" />
                 </div>
-              ):(
+              ) : (
                 <input id="file-upload" type="file" accept="image/*" onChange={handleImageChange} className={styles.hideFileInput} />
               )}  
             </div>
@@ -66,14 +84,14 @@ const PlusPopup = ({ onClose }) => {
                 상품명
                 <input type="text" value={productName} onChange={handleProductNameChange} />
               </label>
-            </div>  
+            </div>
 
             <div className={styles["description-flex-row"]}>
               <label>
                 상품 설명
                 <textarea value={productDescription} onChange={handleProductDescriptionChange} />
               </label>
-              </div>
+            </div>
 
             <div className={styles["price-flex-row"]}>
               <label>
