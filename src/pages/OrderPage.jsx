@@ -1,7 +1,10 @@
+import Order from"../components/Order/order";
+import styles from "./OrderPage.module.css";
+
 const OrderPage = () => {
   return (
-    <div>
-      <h1>Order Page.</h1>
+    <div className = {styles.orderdiv}>
+      <Order/>
     </div>
   );
 };

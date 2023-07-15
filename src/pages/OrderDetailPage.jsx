@@ -1,8 +1,8 @@
+import OrderDetail from "../components/OrderDetail/orderdetail";
+
 const OrderDetailPage = () => {
   return (
-    <div>
-      <h1>Order detail page.</h1>
-    </div>
+    <OrderDetail />
   );
 };
 

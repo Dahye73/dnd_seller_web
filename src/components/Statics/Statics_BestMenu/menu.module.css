@@ -6,7 +6,6 @@
     font-size: 1.5em;
     color: #333;
     font-weight: bold;
-    margin-top: 2.6vw;
     margin-left: 5vw;
 }
 
@@ -18,12 +17,75 @@
     width: 90%;
     margin: 3.3rem auto;
     /* margin-left: 5vw; */
+    gap: 10px;
+    /* 박스 사이의 간격 */
+    width: 78%;
+    height: 70vh;
+    /* Add this line */
+    overflow-y: auto;
+    /* Add this line */
+    border: 1px solid lightgray;
+    border-radius: 2rem;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 5vw;
+}
+
+.titleContainer {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .box {
     padding: 20px;
     background-color: lightgray;
     border-radius: 2rem;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.menu_title {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.menu_price {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu_favorite {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.favoriteContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.titleAndIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {

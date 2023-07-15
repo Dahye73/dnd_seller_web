@@ -81,7 +81,7 @@
     align-items: center;
     margin-top: 2rem;
     flex-direction: row;
-    width: 100%;
+    width: 100% !important;
     height: 55px;
     border: 1px solid rgba(30, 30, 30, 0.36);
     color: rgba(30, 30, 30, 0.36);
@@ -99,4 +99,8 @@
     transform: scale(1.05);
     cursor: pointer;
   }
+}
+
+.kakao-login-button:hover {
+  cursor: pointer;
 }

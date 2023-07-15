@@ -1,5 +1,6 @@
 import {
   Button,
+  CircularProgress,
   Dialog,
   DialogActions,
   DialogContent,
@@ -10,20 +11,43 @@ import {
 import styles from "./StartPage_memo.module.scss";
 import { useState } from "react";
 import { Delete } from "@mui/icons-material";
+import {
+  addMemoFetcher,
+  deleteMemoFetcher,
+  useStore,
+} from "../../../hooks/store_hooks";
 
 const StartPageMemo = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [memo, setMemo] = useState("");
-  const [memoList, setMemoList] = useState([]);
+  const { data, error, isLoading, mutate } = useStore();
+
+  if (error) {
+    return <h1>에러가 발생했습니다. 다시 시도해주세요.</h1>;
+  }
+
+  if (isLoading) {
+    return <CircularProgress />;
+  }
 
   const openModalHandler = () => {
     setIsOpen(true);
   };
 
-  const memoCompleteHandler = () => {
-    setMemoList((prev) => [...prev, memo]);
+  const memoCompleteHandler = async () => {
     setIsOpen(false);
     setMemo("");
+    // fetch: add memo.
+
+    try {
+      addMemoFetcher(memo);
+      mutate({
+        ...data,
+        todoList: [...data.todoList, memo],
+      });
+    } catch (error) {
+      window.alert(error.message);
+    }
   };
 
   const memoChangeHandler = (e) => {
@@ -31,10 +55,11 @@ const StartPageMemo = () => {
   };
 
   const deleteMemoHandler = (index) => {
-    setMemoList((prev) => {
-      const newList = [...prev];
-      newList.splice(index, 1);
-      return newList;
+    // fetch: delete memo.
+    deleteMemoFetcher(index);
+    mutate({
+      ...data,
+      todoList: data.todoList.filter((_, i) => i !== index),
     });
   };
 
@@ -73,7 +98,7 @@ const StartPageMemo = () => {
         </h2>
         <hr />
         <ul>
-          {memoList.map((item, index) => {
+          {data.todoList.map((item, index) => {
             return (
               <li key={item}>
                 <div>{item}</div>
